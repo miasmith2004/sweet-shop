@@ -1,0 +1,50 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+Teacher Timetable
+
+{% endblock %}
+{% block content %}
+
+
+
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Start Time</th> 
+            <th>End Time</th>
+            <th>Class Types</th>
+            <th>Room Number</th>
+            <th>Module</th>
+            <th>Cohort</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for booking in booking %}
+        {% if user.is_student == False %}
+            <tr>
+                <td>{{ booking.date }}</td>
+                <td> {{ booking.start_time }}</td>
+                <td> {{ booking.end_time}}</td>
+                <td> {{ booking.class_types }}</td>
+                <td> {{ booking.room }}</td>
+                <td> {{ booking.module }}</td>
+                <td>{{ booking.cohort}}</td>
+         
+              
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+<a href = "/" class="btn btn-primary">Back to dashboard</a></body>
+<br>
+<br>
+<a href = "/teacherbooking/" class="btn btn-primary">Book another room</a></body>
+
+
+{% endblock %}

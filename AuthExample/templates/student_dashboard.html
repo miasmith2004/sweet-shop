@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Student Dashboard
+
+{% endblock %}
+{% block content %}
+<h1>Student Dashboard</h1>
+<p>Welcome, {{ user.username }} (Student)</p>
+<a href = "/studentbooking/" class="btn btn-primary">Student booking</a></body><br>
+<br>
+<a href = "/studenttimetable/" class="btn btn-primary">Student Timetable</a></body><br>
+<br>
+<a href = "/logout/" class="btn btn-primary">Logout</a></body>
+</html>
+{% endblock %}
